@@ -1,0 +1,9 @@
+Gamma Knife annual QA automated filmless profile processing code for PTW MicroDiamond and SNC PC Electrometer
+
+1. Install miniconda (or anaconda) at https://docs.conda.io/en/latest/miniconda.html. 
+2. From miniconda or anaconda prompt (or cmd, if conda added to PATH), naviate to profile code directory
+3.a. Create a conda environment using the gk-profiles.yml file using "conda env create --name NAME --file gk-profiles.yml" (not necessary if you've previously created an environment to run this code.
+3.b. Activate the environment using "conda activate NAME". You can list conda environments with "conda info --envs".
+4. With LGP DICOMs and measurements in the appropriate directories, run "python read_lgp.py" from the anaconda prompt to read the DICOM data and store them as numpy arrays. This only needs to be done once.
+5. run "python profiles.py" to plot LGP and measured profiles and create an output PDF. Some settings, such as whether to use linear interpolation or a support vector machine for profile fitting, can be adjusted in the first few lines of profiles.py.
+
